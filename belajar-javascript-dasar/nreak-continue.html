@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break And Continue</title>
+</head>
+
+<body>
+    <script>
+        // document.writeln("<h2>Break</h2>");
+        // let counter = 1;
+        // while (true) {
+        //     document.writeln(`<p>Perulangan ke ${counter}</p>`)
+        //     counter++;
+
+        //     if (counter > 10) {
+        //         break;
+        //     }
+        // }
+
+
+        document.writeln("<h2>Continue</h2>");
+        for (let i = 0; i <= 100; i++) {
+            if (i % 2 === 0) {
+                continue;
+            }
+            document.writeln(`<p>Perulangan ke ${i}</p>`);
+        }
+    </script>
+</body>
+
+</html>

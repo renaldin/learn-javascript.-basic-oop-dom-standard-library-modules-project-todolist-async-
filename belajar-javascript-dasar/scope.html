@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+
+<body>
+    <script>
+        // Global Scope
+        let counter = 0;
+
+        function hitMe() {
+            // Local Scope
+            counter++;
+        }
+
+        function other() {
+            // Local Scope
+        }
+
+        hitMe();
+        hitMe();
+
+        console.info(counter);
+
+        function first() {
+            // Local Scope
+            const firstVariable = "First";
+        }
+
+        function second() {
+            // Local Scope
+            const secondVariable = "Second";
+        }
+
+        first();
+        first();
+
+        console.info(firstVariable);
+    </script>
+</body>
+
+</html>

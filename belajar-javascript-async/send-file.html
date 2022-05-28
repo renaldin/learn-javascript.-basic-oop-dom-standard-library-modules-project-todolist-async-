@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send File</title>
+</head>
+
+<body>
+    <h1>Register</h1>
+    <form>
+        <label for="username">Username:
+            <input type="text" id="username" name="username">
+        </label>
+        <br>
+        <label for="name">Name:
+            <input type="text" id="name" name="name">
+        </label>
+        <br>
+        <label for="profile">Profile:
+            <input type="file" name="profile" id="profile">
+        </label>
+        <br>
+        <input type="button" id="register" value="Register">
+    </form>
+    <h1 id="response"></h1>
+
+    <script>
+        function doRegister() {
+            const ajax = new XMLHttpRequest();
+            ajax.open("POST", "https://hookb.in/123");
+            ajax.onload = function () {
+                const response = document.getElementById("response");
+                response.innerText = ajax.responseText;
+            }
+
+            const form = new FormData();
+            form.append("username", document.getElementById("username").value);
+            form.append("name", document.getElementById("name").value);
+
+            const files = document.getElementById("profile").files;
+            const firstFile = file.item(0);
+            form.append("profile", firstFile);
+
+            ajax.send(form);
+        }
+
+        document.getElementById("register").onclick = doRegister;
+    </script>
+</body>
+
+</html>

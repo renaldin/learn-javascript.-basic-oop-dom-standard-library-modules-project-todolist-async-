@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Objek</title>
+</head>
+
+<body>
+    <script>
+
+        const person = {
+            name: "Renaldi Noviandi",
+            address: "Indonesia",
+            age: 20
+        };
+
+        // Menambah atau merubah
+        // person["name"] = "Renaldi Noviandi";
+        // person["address"] = "Indonesia";
+        // person["age"] = 20;
+
+        console.info(`Name : ${person.name}`);
+        console.info(`Address : ${person.address}`);
+        console.info(`Age : ${person.age}`);
+
+        console.table(person);
+
+        delete person["age"];
+
+        console.table(person);
+
+    </script>
+</body>
+
+</html>

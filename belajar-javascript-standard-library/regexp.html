@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp</title>
+</head>
+
+<body>
+    <script>
+
+        {
+            // Create RegEx
+            const regex1 = /renaldi/;
+            const regex2 = new RegExp('renaldi');
+            const regex3 = new RegExp(/renaldi/);
+        }
+
+        {
+            // text regex
+            const name = "renaldi noviandi renaldi rey";
+            const regex = /renaldi/;
+
+            const result = regex.exec(name);
+            console.info(result);
+            console.info(regex.exec('Tidak Ada'));
+
+            const test = regex.test(name);
+            console.info(test);
+            console.info(regex.test("Tidak Ada"));
+        }
+
+        {
+            // regex modifier
+
+            const name = "renaldi noviandi\nRenaldi noviandi\nRandi Noviandi";
+            const regex1 = /^r.i/igm
+            const regex2 = /Noviandi/ig
+
+            let result;
+            while ((result = regex1.exec(name)) !== null) {
+                console.info(result);
+            }
+
+            while ((result = regex2.exec(name)) !== null) {
+                console.info(result);
+            }
+        }
+
+        {
+            // advamced regex
+            const regex = /ek[aiueo]/ig
+
+            const name = "eko eki eka eku eke edo eko eki";
+            let result;
+            while ((result = regex.exec(name)) !== null) {
+                console.info(result);
+            }
+        }
+
+        {
+            const name = "eko eki eka eku eke edo eko eki";
+
+            console.info(name.match(/ek[aiueo]/ig));
+            console.info(name.search(/ek[aiueo]/ig));
+            console.info(name.replace(/ek[aiueo]/i, "kamu"));
+            console.info(name.replaceAll(/ek[aiueo]/ig, "kamu"));
+            console.info(name.split(/e/ig));
+        }
+    </script>
+</body>
+
+</html>

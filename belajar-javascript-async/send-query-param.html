@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Ajax Query Param</title>
+</head>
+
+<body>
+    <form>
+        <label for="search">Ssearch:
+            <input type="text" id="search" name="search">
+        </label>
+        <br>
+        <input type="search" id="searchButton" value="Search">
+    </form>
+    <h1 id="response"></h1>
+
+    <script>
+        function doSearch() {
+            const ajax = new XMLHttpRequest();
+
+            const param = new URLSearchParams();
+            param.append("search", document.getElementById("search").value);
+            param.append("filter", document.getElementById("search").value);
+
+            ajax.open("GET", `https://hookb.in/123?${param.toString()}`);
+            ajax.onload = function () {
+                const response = document.getElementById("response");
+                response.innerText = ajax.responseText;
+            }
+
+            ajax.send();
+        }
+
+        document.getElementById("searchButton  ").onclick = doSearch;
+    </script>
+</body>
+
+</html>
